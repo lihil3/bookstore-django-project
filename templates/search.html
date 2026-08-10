@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Books</title>
+</head>
+
+<body>
+
+    <h1>Search Books</h1>
+
+    <form method="GET">
+        <input
+            type="text"
+            name="q"
+            placeholder="Enter book title"
+            value="{{ query }}"
+        >
+
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Search Results</h2>
+
+    {% if books %}
+        <ul>
+            {% for book in books %}
+                <li>
+                    <a href="{% url 'books.view_book' book.id %}">
+                        {{ book.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books found.</p>
+    {% endif %}
+
+</body>
+</html>

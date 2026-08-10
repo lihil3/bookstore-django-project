@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<h2>Welcome to Our Online Bookstore</h2>
+
+<img src="{% static 'images/bookstore.webp' %}"
+     alt="Online Bookstore"
+     width="100">
+
+<p>Browse and manage books easily.</p>
+
+<h3>Bookstore Menu</h3>
+
+<ul>
+    <li>
+        <a href="{% url 'books.list_books' %}">List Books</a>
+    </li>
+
+    <li>
+        <a href="{% url 'books.add_book' %}">Add Book</a>
+    </li>
+
+    <li>
+        <a href="{% url 'books.search' %}">Search Books</a>
+    </li>
+</ul>
+
+<h3>How to Use the Bookstore</h3>
+
+<ol>
+    <li>Browse the available books.</li>
+    <li>Add a new book.</li>
+    <li>Search for a book.</li>
+    <li>View book details.</li>
+</ol>
+
+{% endblock %}
